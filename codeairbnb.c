@@ -21,10 +21,7 @@ typedef struct logement {
 } logement;
 
 
- int carre(x){ // fonction qui donne le carré de x
-return x*x;
- }
-
+ 
 logement LogementATester(){ // Fonction afin d'entrer les spécificités du logement à tester afin d'en calculer le prix
     int a;                  // Price et distance ne sont donc pas remplis car ils sont calculés
     logement LogementX;
@@ -143,18 +140,6 @@ logement copyTableau(){      // Fonction copiant le tableau du document fourni a
     }
 }
 
-void shuffle(logement tab[], int taille){
-    srand(time(NULL));
-    int random;
-    logement temp;
-    for (int i=0; i<taille, i++){
-        random= rand()%taille;
-        temp= tab[i];
-        tab[i] = tab[random];
-        tab[random] = temp;
-    }
-}
-
 int triinsertion(logement tab[])
 { 
   int i, j, tmp;
@@ -162,10 +147,10 @@ int triinsertion(logement tab[])
   for (i=1 ; i <= SIZE-1; i++) {
     j = i;
  
-    while (j > 0 && tab[j-1].distance[0] > tab[j].distance[0]) {
-      tmp = tab[j].distance[0];
-      tab[j].distance[0] = tab[j-1].distance[0];
-      tab[j-1].distance[0] = tmp;
+    while (j > 0 && tab[j-1].distance[k] > tab[j].distance[k]) {
+      tmp = tab[j].distance[k];
+      tab[j].distance[k] = tab[j-1].distance[k];
+      tab[j-1].distance[k] = tmp;
  
       j--;
     }
@@ -178,17 +163,6 @@ int triinsertion(logement tab[])
 }
    
 
-int moyennePrix(logement tab[], int k){
-    int a=0;
-    int estimated_price;
-    for (int i=0, i<k, i++){
-        a=a+tab[i].price;
-    }
-    
-    estimated_price = a/k;
-    return estimated_price;
-   
-    }
 
 int main(){
     int a;
