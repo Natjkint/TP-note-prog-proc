@@ -189,5 +189,14 @@ int moyennePrix(logement tab[], int k){
    
     }
 
-
+int main(){
+    int a;
     
+    copyTableau();
+    shuffle(tab[], nbrLignes());
+    triinsertion(tab[]);
+    a=moyennePrix(tab, 100);
+    printf("Le prix estimé est: %d", a);
+    return 0;
+}
+        
