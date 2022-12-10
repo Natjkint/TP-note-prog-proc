@@ -42,3 +42,11 @@ int step(int (*file_attente)[2]){
     printf("Il n'y a pas de processus en attente");
     return 10;
 }
+
+int run(int (*file_attente)[2]){
+    int A=step(*file_attente);
+    while (A!=10){
+        A=step(*file_attente);
+    }
+    return 0;
+}
