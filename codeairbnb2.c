@@ -143,3 +143,13 @@ int triinsertion(logement tab[])
   return 0;
 }
 
+int main(){
+    int a;
+    copyTableau();
+    //shuffle(tab[]);
+    triinsertion(tab[]);
+    //a=moyennePrix(tab[], 100);
+    printf("Le prix estimé est: %d", a);
+    return 0;
+}
+        
