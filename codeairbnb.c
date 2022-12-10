@@ -69,10 +69,11 @@ logement copyTableau(){      // Fonction copiant le tableau du document fourni a
     char buffer[1024];
     int column;
     int numattr;
-    logement tab[nbrLignes(filename)-1];
+    int a=nbrLignes()-1;
+    logement tab[a];
     FILE *fileStream;
     fileStream = fopen(filename, "r");
-    for (int i=0; i<= nbrLignes(filename)-1; i++){
+    for (int i=0; i<= a; i++){
         fgets(buffer,1024, fileStream);
         char* value = strtok(buffer, ", ");
         column = 0;
