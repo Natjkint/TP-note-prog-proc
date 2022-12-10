@@ -30,14 +30,15 @@ void ajout_activite(int (*file_attente)[2]){
         }
 }           
 
-void step(int (*file_attente)[2]){
+int step(int (*file_attente)[2]){
     for (unsigned i = 0; i < 100; ++i)
         if(file_attente[i][0]!=NULL){
-            //exec le processus
-            printf("Processus %s, de priorité %d, et de durée d'exécution %d", file_attente[i][1], file_attente[i][2], file_attente[i][3]);
-            for (unsigned j = 0; i < 4; ++i)
+            //"exec le processus"
+            printf("Processus %s, de priorité %d, et de durée d'exécution %d", file_attente[i][1], file_attente[i][2], file_attente[i][3];);
+            for (unsigned j = 0; j < 4; ++j)
                 file_attente[i][j]=NULL;
+            return 0;
         }
     printf("Il n'y a pas de processus en attente");
-    return 0;
+    return 10;
 }
