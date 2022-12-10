@@ -35,6 +35,8 @@ void step(int (*file_attente)[2]){
         if(file_attente[i][0]!=NULL){
             //exec le processus
             printf("Processus %s, de priorité %d, et de durée d'exécution %d", file_attente[i][1], file_attente[i][2], file_attente[i][3]);
+            for (unsigned j = 0; i < 4; ++i)
+                file_attente[i][j]=NULL;
         }
     printf("Il n'y a pas de processus en attente");
     return 0;
