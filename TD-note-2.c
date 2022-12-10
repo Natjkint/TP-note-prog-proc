@@ -1,9 +1,13 @@
 #include <stdio.h>
 
 typedef struct processus{char nom;int priorite;int duree_exec;} processus;
-typedef struct ordonnanceur{int file[100];struct processus proc;} ordonnanceur;
 
-processus entree_processus() { 
+int file_attente[][4];
+/*
+typedef struct ordonnanceur{file_attente} ordonnanceur;
+*/
+
+processus entree_processus(){
     processus procX;
     printf("Veuillez donner une activité : \n nom:");
     scanf("%s",procX.nom);
@@ -14,12 +18,24 @@ processus entree_processus() {
     return(procX);
 }
 
-ordonnanceur ajout_activite(){
+void ajout_activite(int (*file_attente)[2]){
     processus prog1=entree_processus();
-    ordonnanceur A;
-    int i=0;
-    for(0;A.file[i]==NULL;i++);
-    A.file[i]=i;
-    A.proc=prog1;
-    return(A);
+    for (unsigned i = 0; i < 100; ++i)          //il y aura pas plus de 100 éléments à la fois dans la file d'attente.
+        if(file_attente[i][0]!=NULL){
+            file_attente[i][0]=i;
+            file_attente[i][1]=prog1.nom;
+            file_attente[i][2]=prog1.priorite;
+            file_attente[i][3]=prog1.duree_exec;
+            return file_attente;
+        }
+}           
+
+void step(int (*file_attente)[2]){
+    for (unsigned i = 0; i < 100; ++i)
+        if(file_attente[i][0]!=NULL){
+            //exec le processus
+            printf("Processus %s, de priorité %d, et de durée d'exécution %d", file_attente[i][1], file_attente[i][2], file_attente[i][3]);
+        }
+    printf("Il n'y a pas de processus en attente");
+    return 0;
 }
