@@ -17,7 +17,7 @@ typedef struct logement {
     int minimum_nights;
     int maximum_nights;
     int number_of_reviews;
-    float distance;
+    float distance[3];
 } logement;
 
 
@@ -118,25 +118,25 @@ logement copyTableau(){      // Fonction copiant le tableau du document fourni a
             scanf("%d", &numattr);
             switch(numattr) {
                 case 1:
-                tab[i].distance=sqrt(carre((tab[i].accommodates-LogementATester().accommodates)));
+                tab[i].distance[0]=sqrt(carre((tab[i].accommodates-LogementATester().accommodates)));
                 break;
                 case 2:
-                tab[i].distance=sqrt(carre((tab[i].bedrooms-LogementATester().bedrooms)));
+                tab[i].distance[0]=sqrt(carre((tab[i].bedrooms-LogementATester().bedrooms)));
                 break;
                 case 3:
-                tab[i].distance=sqrt(carre((tab[i].bathrooms-LogementATester().bathrooms)));
+                tab[i].distance[0]=sqrt(carre((tab[i].bathrooms-LogementATester().bathrooms)));
                 break;
                 case 4:
-                tab[i].distance=sqrt(carre((tab[i].beds-LogementATester().beds)));
+                tab[i].distance[0]=sqrt(carre((tab[i].beds-LogementATester().beds)));
                 break;
                 case 5:
-                tab[i].distance=sqrt(carre((tab[i].minimum_nights-LogementATester().minimum_nights)));
+                tab[i].distance[0]=sqrt(carre((tab[i].minimum_nights-LogementATester().minimum_nights)));
                 break;
                 case 6:
-                tab[i].distance=sqrt(carre((tab[i].maximum_nights-LogementATester().maximum_nights)));
+                tab[i].distance[0]=sqrt(carre((tab[i].maximum_nights-LogementATester().maximum_nights)));
                 break;
                 case 7:
-                tab[i].distance=sqrt(carre((tab[i].number_of_reviews-LogementATester().number_of_reviews)));
+                tab[i].distance[0]=sqrt(carre((tab[i].number_of_reviews-LogementATester().number_of_reviews)));
                 break;
             }
          fclose(fileStream);
@@ -162,10 +162,10 @@ int triinsertion(logement tab[])
   for (i=1 ; i <= SIZE-1; i++) {
     j = i;
  
-    while (j > 0 && tab[j-1].distance > tab[j].distance) {
-      tmp = tab[j].distance;
-      tab[j].distance = tab[j-1].distance;
-      tab[j-1].distance = tmp;
+    while (j > 0 && tab[j-1].distance[0] > tab[j].distance[0]) {
+      tmp = tab[j].distance[0];
+      tab[j].distance[0] = tab[j-1].distance[0];
+      tab[j-1].distance[0] = tmp;
  
       j--;
     }
@@ -193,6 +193,7 @@ int moyennePrix(logement tab[], int k){
 int main(){
     int a;
     
+    LogementATester();
     copyTableau();
     shuffle(tab[], nbrLignes());
     triinsertion(tab[]);
