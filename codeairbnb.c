@@ -142,4 +142,52 @@ logement copyTableau(){      // Fonction copiant le tableau du document fourni a
     }
 }
 
+void shuffle(logement tab[], int taille){
+    srand(time(NULL));
+    int random;
+    logement temp;
+    for (int i=0; i<taille, i++){
+        random= rand()%taille;
+        temp= tab[i];
+        tab[i] = tab[random];
+        tab[random] = temp;
+    }
+}
 
+int triinsertion(logement tab[])
+{ 
+  int i, j, tmp;
+  int SIZE = nbrLignes();
+  for (i=1 ; i <= SIZE-1; i++) {
+    j = i;
+ 
+    while (j > 0 && tab[j-1].distance > tab[j].distance) {
+      tmp = tab[j].distance;
+      tab[j].distance = tab[j-1].distance;
+      tab[j-1].distance = tmp;
+ 
+      j--;
+    }
+  }
+ 
+  printf("\n******** tableau triée par ordre croissant ********\n");
+ 
+ 
+  return 0;
+}
+   
+
+int moyennePrix(logement tab[], int k){
+    int a=0;
+    int estimated_price;
+    for (int i=0, i<k, i++){
+        a=a+tab[i].price;
+    }
+    
+    estimated_price = a/k;
+    return estimated_price;
+   
+    }
+
+
+    
