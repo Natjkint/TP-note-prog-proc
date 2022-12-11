@@ -2,7 +2,7 @@
 
 ordonnanceur run(ordonnanceur A){
     while (A.file != 0){
-        step(A);
+        A = step(A);
     }
     return A;
 }
