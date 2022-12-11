@@ -11,6 +11,7 @@ ordonnanceur entree_processus(ordonnanceur A) {
     for (int i = 0; i < 20; ++i){
         if(A.proc[i].priorite==-1){
             A.proc[i]=procX;
+            A.file++;
             return A;
         }
     }
