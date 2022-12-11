@@ -12,6 +12,7 @@ ordonnanceur entree_processus(ordonnanceur A) {
         if(A.proc[i].priorite==-1){
             A.proc[i]=procX;
             A.file++;
+            printf("%d\n",A.file);
             return A;
         }
     }
