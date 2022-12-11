@@ -1,9 +1,8 @@
 #include "typedef.h"
 
-int run(ordonnanceur A){
-    int test = 0;
-    while (test != 10){
-        test=step(A);
+ordonnanceur run(ordonnanceur A){
+    while (A.file != 0){
+        step(A);
     }
-    return 0;
+    return A;
 }
