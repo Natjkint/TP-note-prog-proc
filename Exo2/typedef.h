@@ -8,8 +8,8 @@
 typedef struct processus{char str_nom[20];int priorite;int duree_exec;} processus;
 typedef struct ordonnanceur{int file[20]; processus proc[20];} ordonnanceur;
 
-ordonnanceur entree_processus();
-int run(ordonnanceur A);
-int step(ordonnanceur A);
+ordonnanceur entree_processus(ordonnanceur A);
+ordonnanceur run(ordonnanceur A);
+ordonnanceur step(ordonnanceur A);
 
 #endif
