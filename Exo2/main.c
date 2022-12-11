@@ -17,8 +17,7 @@ int main(){
         }
     }
     run(A);
-    printf("est-ce que ça execute ça?");
-    if (A.file == 0){               //Dernier test
+    if (A.file == 0){               //Dernier test puur être sûr.
         exit(EXIT_SUCCESS);
     } else {exit(EXIT_FAILURE);}
 }
