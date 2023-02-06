@@ -40,7 +40,7 @@ return nbLogements;
 }
 
 
-void copyTableau(){      // Fonction copiant le tableau du document fourni afin de le manipuler
+logement* copyTableau(){      // Fonction copiant le tableau du document fourni afin de le manipuler
     char buffer[1024];
     int column;
     int numattr;
