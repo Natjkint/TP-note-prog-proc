@@ -26,7 +26,7 @@ logement LogementATester();
 
 int nbrLignes();
 
-logement copyTableau();
+void copyTableau();
 
 int carre(float x);
 
