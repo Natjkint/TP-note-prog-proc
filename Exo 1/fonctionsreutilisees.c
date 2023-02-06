@@ -1,5 +1,6 @@
 #include "fonctionsreutilisees.h"
 
+
 logement LogementATester(){ // Fonction afin d'entrer les spécificités du logement à tester afin d'en calculer le prix
     int a;                  // Price et distance ne sont donc pas remplis car ils sont calculés
     logement LogementX;
@@ -110,9 +111,10 @@ return x*x;
 void shuffle(logement tab[], int taille){  // Fonction qui va randomiser le tableau
     srand(time(NULL));
     int random;
+    RAND_MAX=taille;
     logement temp;
     for (int i=0; i<taille; i++){
-        random= rand()%taille;
+        random= rand();
         temp= tab[i];
         tab[i] = tab[random];
         tab[random] = temp;
