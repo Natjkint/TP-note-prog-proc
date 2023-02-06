@@ -47,12 +47,14 @@ void copyTableau(){      // Fonction copiant le tableau du document fourni afin 
     int column;
     int numattr;
     logement tester = LogementATester();
-    logement tab[nbrLignes()-1];
+    logement tab[nbrLignes(filename)];
     FILE *fileStream;
     fileStream = fopen(filename, "r");
     if(!fileStream){
 		printf("Erreur d'ouverture du fichier");
         }
+    else{
+	fgets(buffer,1024, fileStream);
     for (int i=0; i<= nbrLignes()-1; i++){
         fgets(buffer,1024, fileStream);
         char* value = strtok(buffer, ", ");
@@ -106,6 +108,7 @@ void copyTableau(){      // Fonction copiant le tableau du document fourni afin 
     }
              fclose(fileStream);
 
+}
 }
 
 float carre(float x){ // fonction qui donne le carré de x
