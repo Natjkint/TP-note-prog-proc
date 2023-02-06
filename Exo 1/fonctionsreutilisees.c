@@ -98,8 +98,9 @@ logement* copyTableau(){      // Fonction copiant le tableau du document fourni 
                 tab[i].distance[6]=sqrt(carre((tab[i].number_of_reviews-tester.number_of_reviews)));
                
             
-         fclose(fileStream);
     }
+             fclose(fileStream);
+
 }
 
 int carre(float x){ // fonction qui donne le carré de x
