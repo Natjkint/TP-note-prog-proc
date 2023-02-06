@@ -1,2 +1,2 @@
-codeairbnb: codeairbnb.c fonctionsreutilisees.c fonctionsreutilisees.h
-gcc -std=c99 -Wall -o codeairbnb.c fonctionsreutilisees.c
+codeairbnb: fonctionsreutilisees.c fonctionsreutilisees.h airbnb_donnees_propre.csv
+	gcc -std=c99 -Wall -o fonctionsreutilisees.c
