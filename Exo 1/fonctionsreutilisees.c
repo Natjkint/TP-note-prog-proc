@@ -49,6 +49,8 @@ void copyTableau(){      // Fonction copiant le tableau du document fourni afin 
     logement tab[nbrLignes()-1];
     FILE *fileStream;
     fileStream = fopen(filename, "r");
+    if fileStream == 0{
+        return ERROR
     for (int i=0; i<= nbrLignes()-1; i++){
         fgets(buffer,1024, fileStream);
         char* value = strtok(buffer, ", ");
@@ -57,32 +59,32 @@ void copyTableau(){      // Fonction copiant le tableau du document fourni afin 
             switch (column)
             {
             case 0:
-                tab[i].index=value;
+                tab[i].index=atoi(value);
                 break;
             
             case 1:
-                 tab[i].accommodates=value;
+                 tab[i].accommodates=atoi(value);
                  break;
             case 2:
-                   tab[i].bedrooms=int(value);
+                   tab[i].bedrooms=atoi(value);
                    break;
             case 3:
-                   tab[i].bathrooms=int(value);
+                   tab[i].bathrooms=atoi(value);
                    break;
             case 4:
-                   tab[i].beds=int(value);
+                   tab[i].beds=atoi(value);
                    break;
             case 5:
-                   tab[i].price=int(value);
+                   tab[i].price=atoi(value);
                    break;
             case 6:
-                   tab[i].minimum_nights=int(value);
+                   tab[i].minimum_nights=atoi(value);
                    break;
             case 7:
-                   tab[i].maximum_nights=int(value);
+                   tab[i].maximum_nights=atoi(value);
                    break;
             case 8:
-                   tab[i].number_of_reviews=int(value);
+                   tab[i].number_of_reviews=atoi(value);
                    break;
              }
 
