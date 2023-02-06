@@ -64,25 +64,25 @@ void copyTableau(){      // Fonction copiant le tableau du document fourni afin 
                  tab[i].accommodates=value;
                  break;
             case 2:
-                   tab[i].bedrooms=value;
+                   tab[i].bedrooms=int(value);
                    break;
             case 3:
-                   tab[i].bathrooms=value;
+                   tab[i].bathrooms=int(value);
                    break;
             case 4:
-                   tab[i].beds=value;
+                   tab[i].beds=int(value);
                    break;
             case 5:
-                   tab[i].price=value;
+                   tab[i].price=int(value);
                    break;
             case 6:
-                   tab[i].minimum_nights=value;
+                   tab[i].minimum_nights=int(value);
                    break;
             case 7:
-                   tab[i].maximum_nights=value;
+                   tab[i].maximum_nights=int(value);
                    break;
             case 8:
-                   tab[i].number_of_reviews=value;
+                   tab[i].number_of_reviews=int(value);
                    break;
              }
 
@@ -104,7 +104,7 @@ void copyTableau(){      // Fonction copiant le tableau du document fourni afin 
 
 }
 
-int carre(float x){ // fonction qui donne le carré de x
+float carre(float x){ // fonction qui donne le carré de x
 return x*x;
  }
 
