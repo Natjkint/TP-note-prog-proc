@@ -6,7 +6,7 @@
 #include <time.h>
 #include <stdbool.h>
 #include <stdlib.h>
-#define filename "airbnb_donnees_propre.csv"
+#define filepath "../airbnb_donnees_propre.csv"
 
 
 typedef struct logement {
