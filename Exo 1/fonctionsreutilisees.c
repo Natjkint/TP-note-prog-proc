@@ -50,8 +50,8 @@ void copyTableau(){      // Fonction copiant le tableau du document fourni afin 
     logement tab[nbrLignes()-1];
     FILE *fileStream;
     fileStream = fopen(filename, "r");
-    if (fileStream == 0):{
-        return ERROR
+    if(!fileStream){
+		printf("Erreur d'ouverture du fichier");
         }
     for (int i=0; i<= nbrLignes()-1; i++){
         fgets(buffer,1024, fileStream);
