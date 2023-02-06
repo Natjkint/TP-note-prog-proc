@@ -29,11 +29,11 @@ logement LogementATester(){ // Fonction afin d'entrer les spécificités du loge
     return LogementX;
 }
 
-int nbrLignes(){        // Fonction calculant le nombre de ligne dans le document fourni
+int nbrLignes(char* filepath){        // Fonction calculant le nombre de ligne dans le document fourni
     char buffer[1024];
     int nbLogements;
     FILE *fileStream;
-    fileStream = fopen(filename, "r");
+    fileStream = fopen(filepath, "r");
     while (fgets(buffer, 1024, fileStream)){
         nbLogements ++;
     }
