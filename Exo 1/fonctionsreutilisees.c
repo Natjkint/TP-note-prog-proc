@@ -50,7 +50,7 @@ void copyTableau(){      // Fonction copiant le tableau du document fourni afin 
     logement tab[nbrLignes()-1];
     FILE *fileStream;
     fileStream = fopen(filename, "r");
-    if fileStream == 0{
+    if (fileStream == 0):{
         return ERROR
         }
     for (int i=0; i<= nbrLignes()-1; i++){
