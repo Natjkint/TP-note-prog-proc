@@ -45,10 +45,10 @@ logement* copyTableau(){      // Fonction copiant le tableau du document fourni 
     int column;
     int numattr;
     logement tester = LogementATester();
-    logement tab[nbrLignes(filename)-1];
+    logement tab[nbrLignes()-1];
     FILE *fileStream;
     fileStream = fopen(filename, "r");
-    for (int i=0; i<= nbrLignes(filename)-1; i++){
+    for (int i=0; i<= nbrLignes()-1; i++){
         fgets(buffer,1024, fileStream);
         char* value = strtok(buffer, ", ");
         column = 0;
