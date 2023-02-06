@@ -1,4 +1,5 @@
 #include "fonctionsreutilisees.h"
+#include <math.h>
 
 
 logement LogementATester(){ // Fonction afin d'entrer les spécificités du logement à tester afin d'en calculer le prix
